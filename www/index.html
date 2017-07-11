@@ -65,7 +65,12 @@
   * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
 -->
         <script src="cordova.js"></script>
+ 
         <script type="application/javascript" src="js/db-ajax.js"></script>
+        <script type="application/javascript" src="js/index-ble.js"></script>
+        <script type="application/javascript">
+            app.initialize();
+        </script>
 
         <script src="js/app.js"></script>
         <!-- for your event code, see README and file comments for details -->
@@ -656,6 +661,26 @@
                     </div>
 
                 </div>
+                
+       <div class="app">
+            <h1>Bluetooth Serial Chat</h1>
+            <div id="mainPage">
+                <ul id="deviceList">
+                </ul>
+                <button id="refreshButton">Refresh</button>
+            </div>
+            <div id="detailPage">
+                <div id="resultDiv"></div>
+                <div>
+                    <input type="text" id="messageInput" value="Hello"/>
+                    <button id="sendButton">Send</button>
+                </div>
+                <button id="disconnectButton">Disconnect</button>
+            </div>
+            <div id="statusDiv"></div>
+        </div>
+                
+                
                 <div class="upage-content ac0 content-area vertical-col left" id="page_9_56">
                     <div class="tarea widget uib_w_124 d-margins" data-uib="media/text" data-ver="0" name="uib_w_124" id="workoutVideo">
                         <div class="widget-container left-receptacle"></div>
