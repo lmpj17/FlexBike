@@ -18,8 +18,9 @@
 /* jshint browser: true , devel: true*/
 'use strict';
 console.log('bluetooth');
-var app = {
+var appble = {
     initialize: function() {
+        console.log('initialize');
         this.bindEvents();
         this.showMainPage();
     },

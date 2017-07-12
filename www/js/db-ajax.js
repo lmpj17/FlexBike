@@ -368,7 +368,7 @@ function getUserDetails()
                     item = item + "<tr  style='background: rgba(0,174,239,0.7);'>";
                     item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Distance: <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>13M</p></td>";
                     item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Calories: <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>200</p></td>";
-                    item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>SPEED:</p> <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>30 MIN</p></td>";
+                    item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>SPEED:</p> <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>30 MPH</p></td>";
                     item = item + "</tr></table>";
                     item = item + "<p>";
                 $("#workoutDisplay").append(item); 
