@@ -423,12 +423,10 @@ label:empty {
 }
 @media all {
   .bg-login {
-    background-color: ;
-    background-image: url("../images/bg-login.png");
+    background-color: #7d7d7d;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
   }
 }
 .uib_row_3:not(.cright) > .col {
@@ -4345,7 +4343,7 @@ label:empty {
   color: white;
 }
 .noborder {
-  background-color: transparent;
+  background-color: grey;
   color: #eeeeee;
   outline: none;
   outline-style: none;
@@ -4543,4 +4541,7 @@ label:empty {
 }
 .font-red {
   color: red;
+}
+.bg-grey {
+  background-color: #505050;
 }

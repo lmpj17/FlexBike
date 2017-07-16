@@ -65,9 +65,8 @@
   * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
 -->
         <script src="cordova.js"></script>
- 
-        <script type="application/javascript" src="js/db-ajax.js"></script>
 
+        <script type="application/javascript" src="js/db-ajax.js"></script>
 
         <script src="js/app.js"></script>
         <!-- for your event code, see README and file comments for details -->
@@ -97,7 +96,7 @@
     <body>
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
-        <div class="upage bg-login vertical-col noborder" id="mainpage">
+        <div class="upage vertical-col noborder" id="mainpage">
             <div class="grid grid-pad urow uib_row_8 row-height-8" data-uib="layout/row" data-ver="0">
                 <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
                     <div class="widget-container content-area vertical-col">
@@ -110,9 +109,9 @@
                                 <p>&nbsp;</p>
                             </div>
                         </div>
-                        <div class="widget uib_w_114 scale-image d-margins" data-uib="media/img" data-ver="0">
+                        <div class="widget uib_w_114 scale-image" data-uib="media/img" data-ver="0">
                             <figure class="figure-align">
-                                <img src="images/logo_login.png">
+                                <img class='img-circle' src="images/bio.png" id="imglogo">
 
                                 <figcaption data-position="bottom"></figcaption>
                             </figure>
@@ -138,63 +137,41 @@
                 <br>
             </div>
 
-            <button class="btn widget uib_w_112 d-margins btGray btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="btemailsignup">Create FITNATION Account</button>
+            <button class="btn widget uib_w_112 bg-blue font-oswald-18 font-white btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="btemailsignup">Create FLEXBIKE Account</button>
             <div>&nbsp;</div>
-            <button class="btn widget uib_w_113 d-margins btGray btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bt-signin">Sign In</button>
+            <button class="btn widget uib_w_113 btn-default bg-blue font-white font-oswald-24" data-uib="twitter%20bootstrap/button" data-ver="1" id="bt-signin">Sign In</button>
         </div>
 
-        <div class="upage hidden" id="pg-videos">
+        <div class="upage hidden font-oswald-white" id="pg-videos">
             <div class="upage-outer">
 
-                <div class="upage-content ac0 content-area vertical-col" id="page_33_8">
-                    <div style="position:relative;width:100%;" class="upage-content ac0 content-area vertical-col" id="page_50_13">
+                <div style="width=100%; background-color:red;" id="page_33_8">
 
-                        <div class="tarea widget uib_w_162 d-margins" data-uib="media/text" data-ver="0" name="uib_w_162" id="featuredClass">
+                    <div style="height:auto;width=100%;" data-ver="0" name="uib_w_162" id="featuredClass">
 
-                        </div>
                     </div>
 
-                    <div class="tarea widget uib_w_30 d-margins" data-uib="media/text" data-ver="0" name="uib_w_30" style="width:70%;">
-                        <div class="scrollmenu" id="scheduleTime">
+                    <div class="scrollmenu" id="scheduleTime" style="width:100%;">
 
-                        </div>
                     </div>
 
-                    <div class="card_grid widget uib_w_14 wrapping-col d-margins flex-basis-14 font-white" data-uib="layout/card_grid" data-ver="0" id="videoGallery1" style="background-color:#d3d3d3;">
-                        <div class="scrollmenu" id="videoGallery2">
-                            <!--                           <table ><tr><td>1234567890</td></tr></table>                            
-                            <table ><tr><td>1234567890</td></tr></table>                            
-                            <table ><tr><td>1234567890</td></tr></table>                            
-                            <table ><tr><td>1234567890</td></tr></table>                            
-                            <table ><tr><td>1234567890</td></tr></table>                            
-                            <table ><tr><td>1234567890</td></tr></table>                            
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-                            <a href="#home"><table ><tr><td>asdfasfadsfasd</td></tr></table></a>
-  -->
-                        </div>
+                    <div class="font-white" data-uib="layout/card_grid" data-ver="0" id="videoGallery1" style="background-color:#d3d3d3;">
 
                     </div>
 
                 </div>
 
-                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_122 bg-white font-5 padding-top" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:20px;">
+                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_122 font-5 padding-top bg-grey" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
                     <table width="100%" height="50px">
                         <tbody>
                             <tr>
-                                <td><a href="#" onclick="videosShowPage();"><i class="fa fa-star fa-2x"></i><p>Featured</p></a>
+                                <td width="25%" align="center"><a href="#" onclick="videosShowPage();"><i class="fa fa-star fa-2x font-white-1"></i><p class="font-white-1">Featured</p></a>
                                 </td>
-                                <td><a href="#" onclick="onDemandShowPage();"><i class="fa fa-play-circle-o fa-2x"></i><p>On-Demand</p></a>
+                                <td width="25%" align="center"><a href="#" onclick="onDemandShowPage();"><i class="fa fa-play-circle-o fa-2x font-white-1"></i><p class="font-white-1">On-Demand</p></a>
                                 </td>
-                                <td><a href="#" onclick="scheduleShowPage();"> &nbsp;&nbsp;&nbsp;<i class="fa fa-calendar fa-2x"></i><p>Schedule</p></a>
+                                <td width="25%" align="center"><a href="#" onclick="scheduleShowPage();"><i class="fa fa-calendar fa-2x font-white-1"></i><p class="font-white-1">Schedule</p></a>
                                 </td>
-                                <td><a href="#"><i class="fa fa-user fa-2x "></i><p>Profile</p></a>
+                                <td width="25%" align="center"><a href="#"><i class="fa fa-user fa-2x font-white-1"></i><p class="font-white-1">Profile</p></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -204,13 +181,13 @@
             </div>
         </div>
 
-        <div class="upage hidden bg-gray font-oswald-white font-black" id="pg-ondemand">
+        <div class="upage hidden bg-gray font-black font-oswald-white" id="pg-ondemand">
             <div class="upage-outer">
                 <div class="upage-content ac0" id="page_34_57">
                     <div class="upage-outer">
-                        <div class="uib-header container-group inner-element uib_w_63 size-header btGray" data-uib="layout/header" data-ver="0">
+                        <div class="uib-header container-group inner-element uib_w_63 size-header" data-uib="layout/header" data-ver="0">
                             <h2></h2>
-                            <div class="widget-container wrapping-col single-centered">
+                            <div class="widget-container wrapping-col single-centered font-white-1">
                                 <p id="btMenuRep" class="">&nbsp;ON-DEMAND
 
                                 </p>
@@ -266,26 +243,21 @@
                             <p>title</p>
                         </div>
                     </div>
-                    <div class="tarea widget uib_w_88 d-margins" data-uib="media/text" data-ver="0" name="uib_w_88" id="listOndemands">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>listOndemands</p>
-                        </div>
+                    <div class="tarea widget uib_w_88 " data-uib="media/text" data-ver="0" name="uib_w_88" id="listOndemands">
                     </div>
                 </div>
-                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_117 padding-top bg-white font-5" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:20px;">
+                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_117 padding-top bg-grey font-5" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
 
                     <table width="100%" height="50px">
                         <tbody>
                             <tr>
-                                <td><a href="#" onclick="videosShowPage();"><i class="fa fa-star fa-2x"></i><p>Featured</p></a>
+                                <td width="25%" align="center"><a href="#" onclick="videosShowPage();"><i class="fa fa-star fa-2x font-white-1"></i><p class="font-white-1">Featured</p></a>
                                 </td>
-                                <td><a href="#" onclick="onDemandShowPage();"><i class="fa fa-play-circle-o fa-2x"></i><p>On-Demand</p></a>
+                                <td width="25%" align="center"><a href="#" onclick="onDemandShowPage();"><i class="fa fa-play-circle-o fa-2x font-white-1"></i><p class="font-white-1">On-Demand</p></a>
                                 </td>
-                                <td><a href="#" onclick="scheduleShowPage();"> &nbsp;&nbsp;&nbsp;<i class="fa fa-calendar fa-2x"></i><p>Schedule</p></a>
+                                <td width="25%" align="center"><a href="#" onclick="scheduleShowPage();"><i class="fa fa-calendar fa-2x font-white-1"></i><p class="font-white-1">Schedule</p></a>
                                 </td>
-                                <td><a href="#"><i class="fa fa-user fa-2x "></i><p>Profile</p></a>
+                                <td width="25%" align="center"><a href="#"><i class="fa fa-user fa-2x font-white-1"></i><p class="font-white-1">Profile</p></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -505,32 +477,10 @@
 
             <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
                 <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
-                    <div class="widget-container content-area vertical-col">
-                        <div class="grid grid-pad urow uib_row_3 row-height-3" data-uib="layout/row" data-ver="0">
-                            <div class="col uib_col_3 col-1_12-12" data-uib="layout/col" data-ver="0">
-                                <div class="widget-container content-area vertical-col">
-                                    <div class="tarea widget uib_w_73 d-margins product-name-header" data-uib="media/text" data-ver="0" name="uib_w_73" id="message-login">
-                                        <div class="widget-container left-receptacle"></div>
-                                        <div class="widget-container right-receptacle"></div>
-                                        <div class="text-container"></div>
-                                    </div>
-                                    <div class="widget uib_w_116 scale-image d-margins" data-uib="media/img" data-ver="0">
-                                        <figure class="figure-align">
-                                            <img src="images/logo_login.png">
-
-                                            <figcaption data-position="bottom"></figcaption>
-                                        </figure>
-                                    </div>
-                                    <span class="uib_shim"></span>
-                                </div>
-                            </div>
-                            <span class="uib_shim"></span>
-                        </div>
-
-                        <span class="uib_shim"></span>
+                    <div class="tarea widget uib_w_73 d-margins product-name-header" data-uib="media/text" data-ver="0" name="uib_w_73" id="message-login">
                     </div>
+
                 </div>
-                <span class="uib_shim"></span>
             </div>
 
             <input type="hidden" id="iduser">
@@ -553,10 +503,10 @@
                 <br>
                 <br>
             </div>
-            <button class="btn widget uib_w_3 d-margins btGray btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="btlogin">SIGN IN</button>
+            <button class="btn widget uib_w_3 btn-default bg-blue font-oswald-24 font-white" data-uib="twitter%20bootstrap/button" data-ver="1" id="btlogin">SIGN IN</button>
 
         </div>
-        <div class="upage hidden bg-gray" id="pg-schedule">
+        <div class="upage hidden bg-gray font-oswald-white" id="pg-schedule">
             <div class="upage-outer">
                 <div class="uib-header header-bg container-group inner-element uib_w_118 btGray" data-uib="layout/header" data-ver="0">
                     <h2></h2>
@@ -575,7 +525,7 @@
                     </div>
                     <div class="widget-container content-area horiz-area wrapping-col right" style="position: absolute; right: 0px;color:skyblue;">
 
-                        <p id="scheduleFilters" class="font-red">Filters
+                        <p id="scheduleFilters" >Filters
 
                         </p>
                     </div>
@@ -584,52 +534,30 @@
                 </div>
                 <div class="upage-content ac0 content-area vertical-col left" id="page_35_90">
 
-                    <div class="tarea widget uib_w_120 d-margins" data-uib="media/text" data-ver="0" name="uib_w_120">
-                        <div class="text-container">
+                    <div class="tarea widget uib_w_120 d-margins bg-grey" data-uib="media/text" data-ver="0" name="uib_w_120">
 
-                        </div>
+                        <div class="scrollmenu1" id="menuDaysScheduleNew">
 
-                        <div class="scrollmenu" id="menuDaysScheduleNew">
-                            <a href="#home">Home</a>
-                            <a href="#news">News</a>
-                            <a href="#contact">Contact</a>
-                            <a href="#about">About</a>
-                            <a href="#support">Support</a>
-                            <a href="#blog">Blog</a>
-                            <a href="#tools">Tools</a> 
-                            <a href="#base">Base</a>
-                            <a href="#custom">Custom</a>
-                            <a href="#more">More</a>
-                            <a href="#logo">Logo</a>
-                            <a href="#friends">Friends</a>
-                            <a href="#partners">Partners</a>
-                            <a href="#people">People</a>
-                            <a href="#work">Work</a>
                         </div>
 
                     </div>
 
-                    <div class="tarea widget uib_w_121 d-margins" data-uib="media/text" data-ver="0" name="uib_w_121" id="scheduleContent">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>scheduleContent</p>
-                        </div>
+                    <div  data-uib="media/text" data-ver="0" name="uib_w_121" id="scheduleContent">
                     </div>
 
                 </div>
             </div>
-            <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_119 font-5 padding-top" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:20px;">
+            <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_119 font-5 padding-top bg-grey" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
                 <table width="100%" height="50px">
                     <tbody>
                         <tr>
-                            <td><a href="#" onclick="videosShowPage();"><i class="fa fa-star fa-2x"></i><p>Featured</p></a>
+                            <td width="25%" align="center"><a href="#" onclick="videosShowPage();"><i class="fa fa-star fa-2x font-white-1"></i><p class="font-white-1">Featured</p></a>
                             </td>
-                            <td><a href="#" onclick="onDemandShowPage();"><i class="fa fa-play-circle-o fa-2x"></i><p>On-Demand</p></a>
+                            <td width="25%" align="center"><a href="#" onclick="onDemandShowPage();"><i class="fa fa-play-circle-o fa-2x font-white-1"></i><p class="font-white-1">On-Demand</p></a>
                             </td>
-                            <td><a href="#" onclick="scheduleShowPage();"> &nbsp;&nbsp;&nbsp;<i class="fa fa-calendar fa-2x"></i><p>Schedule</p></a>
+                            <td width="25%" align="center"><a href="#" onclick="scheduleShowPage();"><i class="fa fa-calendar fa-2x font-white-1"></i><p class="font-white-1">Schedule</p></a>
                             </td>
-                            <td><a href="#"><i class="fa fa-user fa-2x "></i><p>Profile</p></a>
+                            <td width="25%" align="center"><a href="#"><i class="fa fa-user fa-2x font-white-1"></i><p class="font-white-1">Profile</p></a>
                             </td>
                         </tr>
                     </tbody>
@@ -658,9 +586,7 @@
                     </div>
 
                 </div>
-                
- 
-                
+
                 <div class="upage-content ac0 content-area vertical-col left" id="page_9_56">
                     <div class="tarea widget uib_w_124 d-margins" data-uib="media/text" data-ver="0" name="uib_w_124" id="workoutVideo">
                         <div class="widget-container left-receptacle"></div>
@@ -677,19 +603,9 @@
 
                         </div>
                     </div>
-                    <div class="tarea widget uib_w_125 d-margins" data-uib="media/text" data-ver="0" name="uib_w_125" id="workoutDisplay">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>workoutDisplay</p>
-                        </div>
+                    <div  data-uib="media/text" data-ver="0" name="uib_w_125" id="workoutDisplay">
                     </div>
-                    <div class="tarea widget uib_w_126 d-margins" data-uib="media/text" data-ver="0" name="uib_w_126" id="leaderBoard">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>leaderBoard</p>
-                        </div>
+                    <div data-uib="media/text" data-ver="0" name="uib_w_126" id="leaderBoard">
                     </div>
                 </div>
 
@@ -732,37 +648,25 @@
         </div>
         <div class="upage hidden" id="pg-video-detail">
             <div class="upage-outer">
-                <div class="upage-content ac0 content-area vertical-col left" id="page_27_14">
-                    <div class="tarea widget uib_w_157 d-margins" data-uib="media/text" data-ver="0" name="uib_w_157" id="videoImage">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>videoImage</p>
-                        </div>
-                    </div>
-                    <div class="tarea widget uib_w_158 d-margins" data-uib="media/text" data-ver="0" name="uib_w_158" id="difRating">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>difRating</p>
-                        </div>
-                    </div>
-                    <div class="tarea widget uib_w_159 d-margins font-black" data-uib="media/text" data-ver="0" name="uib_w_159" id="videoDescription">
-                        <div class="widget-container left-receptacle"></div>
-                        <div class="widget-container right-receptacle"></div>
-                        <div class="text-container">
-                            <p>videoDescription</p>
-                        </div>
+                <div class="tarea widget uib_w_157 d-margins" data-uib="media/text" data-ver="0" name="uib_w_157" id="videoImage">
+                </div>
+                <div class="tarea widget uib_w_158 d-margins" data-uib="media/text" data-ver="0" name="uib_w_158" id="difRating">
+                </div>
+                <div class="tarea widget uib_w_159 d-margins font-black" data-uib="media/text" data-ver="0" name="uib_w_159" id="videoDescription">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p>videoDescription</p>
                     </div>
                 </div>
-                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_160 padding-bottom" data-uib="layout/footer" data-ver="0">
-                    <h2></h2>
-                    <div class="widget-container wrapping-col single-centered">
-                        <button class="btn widget uib_w_161 d-margins button-round btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="playOndemand"><i class="glyphicon glyphicon-play button-icon-left" data-position="left"></i>PLAY</button>
-                    </div>
-                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
-                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+            </div>
+            <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_160 padding-bottom" data-uib="layout/footer" data-ver="0">
+                <h2></h2>
+                <div class="widget-container wrapping-col single-centered">
+                    <button class="btn widget uib_w_161 d-margins button-round btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="playOndemand"><i class="glyphicon glyphicon-play button-icon-left" data-position="left"></i>PLAY</button>
                 </div>
+                <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                <div class="widget-container content-area horiz-area wrapping-col right"></div>
             </div>
         </div>
 

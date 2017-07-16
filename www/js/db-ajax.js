@@ -241,16 +241,17 @@ function getUserDetails()
  
                         $.each(dates,function(i, date){
                             
-                            var item1 =  "<a href='#' onclick='showFeaturedClass(\""+ date.CLASSID +"\",\""+date.DATE+"\",\""+date.TIME+"\");' style='width=25%;'>" + date.TIME  + "</td>";
+                            var item1 =  "<a href='#' onclick='showFeaturedClass(\""+ date.CLASSID +"\",\""+date.WEEK+"\",\""+date.TIME+"\");' style='width=25%;'>" + date.TIME  + "</td>";
                             item1 = item1 + "&nbsp;&nbsp;&nbsp;&nbsp;";
                             
                             $("#scheduleTime").append(item1); 
                             classnow = date.CLASSNOW;
                             timenow = date.TIMENOW;
                             datenow = date.DATENOW;
+                            weekdaynow = date.WEEKNOW;
                         });
                       ;  
-                      showFeaturedClass(classnow,datenow,timenow);          
+                      showFeaturedClass(classnow,weekdaynow,timenow);          
          
                     },
                     error: function (jqXHR, status) {
@@ -281,14 +282,14 @@ function getUserDetails()
                         
                         $.each(featured,function(i, feat){
                                   
-                            var item = "<table onclick='ondemandDetail("+ feat.ID + ");' align='center' border='0' width='95%' height='160px' style='background: url("+feat.IMG+") no-repeat center center ; border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                                item = item + "<tr  style='background: rgba(0,0,0,0.2);'>";
+                            var item = "<table onclick='ondemandDetail("+ feat.ID + ");' align='center' border='0' width='100%' height='160px' style='background: url("+feat.IMG+") no-repeat center center ; border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                                item = item + "<tr  style='background: rgba(90,90,90,0.5);'>";
                                 item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'>";
                                 item = item + '<p><button class="btn widget uib_w_161 d-margins button-round" style="width:120px;font-size:12px;" data-uib="twitter%20bootstrap/button" data-ver="1" id="playOndemandFeatured"><i class="glyphicon glyphicon-play button-icon-left" data-position="left"></i>JOIN CLASS</button></p>';
                                 item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+feat.DESCRIPTION+"";
                                 item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1vw + 1vh);'>"+feat.INSTRUCTOR;
-                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+date+"/"+time+"</td></tr></table>";
-                                item = item + "<p>";
+                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+date+" "+time+"</td></tr></table>";
+                               
 
 
                             $("#featuredClass").html(item); 
@@ -331,14 +332,14 @@ function getUserDetails()
                                 wdate = sched.DATE;
                             }
                             var item = "<table  align='center' border='0' width='95%' height='50px' style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                                item = item + "<tr  style='background: rgba(0,174,239,0.7);'>";
-                                item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+sched.TIME+"</td>";
-                                item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+sched.DESCRIPTION+"";
+                                item = item + "<tr  style='background: rgba(50,50,50,0.7);'>";
+                                item = item + "<td style='width:20%;vertical-align:center;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.2vw + 1.2vh);'>"+sched.TIME+"</td>";
+                                item = item + "<td style='width:60%;vertical-align:center;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+sched.DESCRIPTION+"";
                                 item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1vw + 1vh);'>"+sched.INSTRUCTOR;
                                 item = item + "</td>";
-                                item = item + "<td><input type='checkbox' name='mark' id='mark' onchange='scheduleSelect(\""+ sched.ID +"\")'></td>";
+                                item = item + "<td style='width:20%; align:right;' ><div class='checkboxFour' style='align:right;'><input type='checkbox'  name='mark' id='checkboxFourInput' onchange='scheduleSelect(\""+ sched.ID +"\")'></div></td>";
                                 item = item + "</tr></table>";
-                                item = item + "<p>";
+                               
                             $("#scheduleContent").append(item); 
                         });
          
@@ -364,8 +365,8 @@ function getUserDetails()
 
                 console.log ('workout-progress: ' );
                 var wdate = "";
-                var item = "<table  align='center' border='0' width='95%' height='50px' style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                    item = item + "<tr  style='background: rgba(0,174,239,0.7);'>";
+                var item = "<table  align='center' border='0' width='100%' height='50px' style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                    item = item + "<tr  style='background: rgba(25,25,112,0.7);'>";
                     item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Distance: <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>13M</p></td>";
                     item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Calories: <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>200</p></td>";
                     item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>SPEED:</p> <p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>30 MPH</p></td>";
@@ -402,10 +403,10 @@ function getUserDetails()
                         $.each(videos,function(i, video){
                                 qty = video.QTY;
                             console.log(video.IMG + "qty:"+ qty);
-                            var item = "<table onclick='ondemandDetail("+ video.ID + ");' align='center' border='0' width='95%' height='150px' style='background: url("+video.IMG+") no-repeat center center ; background-size: cover;  border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                                item = item + "<tr  style='background: rgba(0,174,239,0.7);'><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+video.NAME+"";
+                            var item = "<table onclick='ondemandDetail("+ video.ID + ");' align='center' border='0' width='100%' height='150px' style='background: url("+video.IMG+") no-repeat center center ; background-size: cover;  border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                                item = item + "<tr  style='background: rgba(90,90,90,0.5);'><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+video.NAME+"";
                                 item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1vw + 1vh);'>"+video.INSTRUCTOR;
-                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.DATE+"/"+video.TIME+"</td></tr></table>";
+                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.WEEK+" "+video.TIME+"</td></tr></table>";
                                 item = item + "<p>";
                             $("#listOndemands").append(item); 
                         });
@@ -452,10 +453,13 @@ function getUserDetails()
                                 nrdiv+=nrdiv;
                                 category = video.CATEGORY;
                             }
-                            var item = "<table onclick='ondemandDetail("+ video.ID + ");' align='center' border='0' width='95%' height='150px' style='background: url("+video.IMG+") no-repeat center center ; border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                                item = item + "<tr  style='background: rgba(0,90,90,0.7);'><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+video.NAME+"</p>";
-                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1vw + 1vh);'>"+video.INSTRUCTOR+"</p>";
-                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.DATE+"/"+video.TIME+"</p></td></tr></table>";
+                            var item = "<table onclick='ondemandDetail("+ video.ID + ");' align='center' border='0' width='250px' height='150px' style='background: url("+video.IMG+") no-repeat center center ; border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                                item = item + "<tr>";
+                                item = item + "<td style='align:left;valign:bottom;padding-left:0px;padding-bottom:0px;padding-top:60px;'>";
+                                item = item + "<p style='padding-left:10px; margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.2vw + 1.2vh);'>"+video.NAME+"</p>";
+                                item = item + "<p style='padding-left:10px;margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1vw + 1vh);'>"+video.INSTRUCTOR+"</p>";
+                                item = item + "<p style='padding-left:10px;width:250px;background: rgba(90,90,90,0.8); margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.2vw + 1.2vh);'>"+video.WEEK+" "+video.TIME+"</p>";
+                                item = item + "</td></tr></table>";
                             
                             $("#scroll" + nrdiv).append(item); 
                             
@@ -508,19 +512,22 @@ function getUserDetails()
                         var videos = JSON.parse(result);
                         $.each(videos,function(i, video){
                             console.log(video.IMG + "/" + video.RATE );
-                            var item = "<table align='center' border='0' width='95%' height='250px' style='background: url("+video.IMG+") no-repeat center center ; border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                                item = item + "<tr  style='background: rgba(0,174,239,0.7);'><td style='vertical-align:top;padding-left:10px;padding-top:0px;' onclick='onDemandShowPage();'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(4vw + 4vh);'><</td></tr>";
-                                item = item + "<tr  style='background: rgba(0,174,239,0.7);'><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+video.NAME+"";
+                            var item = "<table align='center' border='0' width='100%' height='250px' style='background: url("+video.IMG+") no-repeat center center ; border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                                item = item + "<tr  style='background: rgba(90,90,90,0.7);'><td style='vertical-align:top;padding-left:10px;padding-top:0px;' onclick='onDemandShowPage();'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(4vw + 4vh);'><</td></tr>";
+                                item = item + "<tr  style='background: rgba(90,90,90,0.7);'><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>"+video.NAME+"";
                                 item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1vw + 1vh);'>"+video.INSTRUCTOR;
-                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.DATE+"/"+video.TIME+"</td></tr></table>";
+                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.WEEK+" "+video.TIME+"</td></tr></table>";
                                 item = item + "<p>";
                             $("#videoImage").append(item); 
-                                item = "<table  align='center' border='0' width='95%' style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
-                                item = item + "<tr  style='background: rgba(0,174,239,0.7);'><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Difficulty/Rating";
-                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.DIFFICULTY+"/"+video.RATE+"%</td></tr></table>";
+                                item = "<table  align='center' border='0' width='100%' style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                                item = item + "<tr  style='background: rgba(90,90,90,0.7);'>";
+                                item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Difficulty";
+                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.DIFFICULTY + "%</td>";
+                                item = item + "<td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'><p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(2vw + 2vh);'>Rating";
+                                item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);'>"+video.RATE+"%</td></tr></table>";
                                 item = item + "<p>";
                             $("#difRating").append(item); 
-                                item = "<table  align='center' border='0' width='95%'  style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
+                                item = "<table  align='center' border='0' width='100%'  style='border-spacing:0; border-collapse:collapse; color:#fff;'>";
                                 item = item + "<tr><td style='vertical-align:bottom;padding-left:10px;padding-bottom:0px;'>";
                                 item = item + "<p style='margin-top: 0em; margin-bottom: 0em;font-family: Oswald Light;font-size:calc(1.5vw + 1.5vh);color:black;'>"+video.DESCRIPTION;
                                 item = item + "</td></tr></table>";

@@ -157,12 +157,26 @@ div.scrollmenu {
 
 div.scrollmenu a  {
     display: inline-block;
-    color: #909090;
+    color: #d3d3d3;
     text-align: center;
-    padding: 14px;
+    padding: 5px;
+    padding-left:15px;
     text-decoration: none;
-    min-width: 50px;
+    min-width: 15px;
 }
+
+div.scrollmenu1 a  {
+    display: inline-block;
+    color: #fff;
+    background-color: #505050;
+    text-align: center;
+    padding: 5px;
+    padding-left:15px;
+    text-decoration: none;
+    min-width: 15px;
+}
+
+
 
 div.scrollmenu a:hover {
     background-color: #777;
@@ -170,8 +184,8 @@ div.scrollmenu a:hover {
 div.scrollmenu table  {
     display: inline-block;
     color: #909090;
-    text-align: center;
-    padding: 14px;
+    text-align: left;
+    padding: 0px;
     text-decoration: none;
     min-width: 50px;
 }
@@ -180,4 +194,48 @@ div.scrollmenu table:hover {
     background-color: #777;
 }
 
+/**
+     * Checkbox Four
+     */
+    .checkboxFour {
+    width: 40px;
+    height: 40px;
+    background: #ddd;
+    margin: 20px 90px;
+    border-radius: 100%;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    }
 
+    /**
+     * Create the checkbox button
+     */
+    .checkboxFour label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    background: #333;
+    -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /**
+     * Create the checked state
+     */
+    .checkboxFour input[type=checkbox]:checked + label {
+    background: #26ca28;
+    }
